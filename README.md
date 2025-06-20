@@ -1,58 +1,62 @@
 # 🚀 INSTAUP - SNS 마케팅 플랫폼
-
 > 실제 한국인 SNS 마케팅 서비스를 제공하는 현대적인 웹 플랫폼
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/neulketing/instaup)
-[![Railway](https://img.shields.io/badge/Railway-Deployed-success)](https://railway.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/neulketing/instaup-platform)
+[![Railway](https://img.shields.io/badge/Railway-Backend-success)](https://railway.app)
 [![Netlify](https://img.shields.io/badge/Netlify-Frontend-brightgreen)](https://netlify.app)
 
 ## 📁 프로젝트 구조
 
 ```
-📦 INSTAUP
-├── 🖥️ backend/                    # Node.js + Express + Prisma 백엔드
-│   ├── src/                       # 소스 코드
-│   ├── prisma/                    # 데이터베이스 스키마
-│   ├── package.json              # 백엔드 의존성
-│   └── railway.json              # Railway 배포 설정
+📦 INSTAUP-PLATFORM
+├── 🖥️ instaup-backend/           # Node.js + Express + Prisma 백엔드
+│   ├── src/                      # 소스 코드
+│   ├── prisma/                   # 데이터베이스 스키마
+│   ├── package.json             # 백엔드 의존성
+│   ├── railway.json             # Railway 배포 설정
+│   └── README.md                # 백엔드 문서
 │
-├── 🎨 frontend/                   # 프론트엔드 애플리케이션들
-│   ├── classic/                   # React + Vite (메인 서비스)
-│   └── modern/                    # React + Vite (모던 버전)
+├── 🎨 instaup-clean/            # React + Vite 프론트엔드 (메인 서비스)
+│   ├── src/                     # 소스 코드
+│   ├── public/                  # 정적 파일
+│   ├── package.json            # 프론트엔드 의존성
+│   ├── netlify.toml            # Netlify 배포 설정
+│   └── README.md               # 프론트엔드 문서
 │
-├── 📁 archive/                    # 레거시 & 참고용 코드
-│   ├── snsshop-clone/            # 참조용 SNS샵 클론
-│   ├── phases/                   # 단계별 개발 계획
-│   └── TODO.md                   # 과거 할일 목록
+├── 🎨 instaup-modern/          # React + Vite 프론트엔드 (모던 버전)
+│   ├── src/                    # 소스 코드
+│   └── package.json           # 의존성
 │
-├── 🎯 assets/                     # 공통 리소스
-│   └── uploads/                  # 업로드된 이미지들
+├── 📁 archive/                 # 레거시 & 참고용 코드
+│   ├── snsshop-clone/         # 참조용 SNS샵 클론
+│   ├── phases/                # 단계별 개발 계획
+│   └── TODO.md               # 과거 할일 목록
 │
-├── 📚 docs/                       # 프로젝트 문서
-├── ⚙️ .github/                    # GitHub Actions CI/CD
-├── 🛠️ .same/                      # Same IDE 설정 & 메모
-└── 📄 README.md                  # 이 파일
+├── 📁 docs/                   # 프로젝트 문서
+├── 🎯 uploads/                # 업로드된 이미지 파일들
+├── .github/                   # GitHub Actions & 워크플로우
+└── README.md                  # 메인 프로젝트 문서
 ```
 
 ## 🚀 빠른 시작
 
 ### 백엔드 실행
 ```bash
-cd backend
+cd instaup-backend
 bun install
 bun run dev
 ```
 
-### 프론트엔드 실행 (Classic)
+### 프론트엔드 실행 (메인)
 ```bash
-cd frontend/classic
+cd instaup-clean
 bun install
 bun run dev
 ```
 
-### 프론트엔드 실행 (Modern)
+### 프론트엔드 실행 (모던)
 ```bash
-cd frontend/modern
+cd instaup-modern
 bun install
 bun run dev
 ```
@@ -60,73 +64,51 @@ bun run dev
 ## 🛠️ 기술 스택
 
 ### 백엔드
-- **Framework**: Node.js + Express
-- **Database**: PostgreSQL + Prisma ORM
-- **Authentication**: JWT
-- **Payment**: 토스페이, 카카오페이
-- **Deployment**: Railway
+- **Node.js** + **Express.js** - 서버 프레임워크
+- **Prisma** - ORM 및 데이터베이스 관리
+- **TypeScript** - 타입 안전성
+- **Railway** - 배포 플랫폼
 
 ### 프론트엔드
-- **Framework**: React 18 + TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS + shadcn/ui
-- **State Management**: Context API
-- **Deployment**: Netlify
+- **React** + **Vite** - UI 프레임워크
+- **TypeScript** - 타입 안전성
+- **Tailwind CSS** - 스타일링
+- **shadcn/ui** - UI 컴포넌트
+- **Netlify** - 배포 플랫폼
 
-### 개발 도구
-- **Package Manager**: Bun
-- **Linting**: Biome
-- **CI/CD**: GitHub Actions
-- **IDE**: Same (Cloud IDE)
+## 📈 주요 기능
 
-## 📊 주요 기능
+- ✅ **인스타그램 팔로워 관리**
+- ✅ **실시간 통계 대시보드**
+- ✅ **사용자 인증 시스템**
+- ✅ **결제 시스템 통합**
+- ✅ **반응형 웹 디자인**
+- ✅ **관리자 패널**
 
-### 🎯 서비스 관리
-- 인스타그램, 틱톡, 유튜브 등 다중 플랫폼 지원
-- 좋아요, 팔로워, 조회수 등 다양한 서비스
-- 실시간 주문 진행률 추적
-
-### 💰 결제 시스템
-- 토스페이, 카카오페이 통합
-- 포인트 충전 및 관리
-- 주문 내역 & 결제 내역
-
-### 👥 추천인 시스템
-- 다단계 추천 구조 (3단계)
-- 실시간 커미션 계산
-- 추천인 통계 대시보드
-
-### 👨‍💼 관리자 패널
-- 서비스 관리
-- 주문 모니터링
-- 사용자 관리
-- 매출 분석
-
-## 🌐 배포된 서비스
+## 🌐 배포
 
 ### 프로덕션 환경
-- **백엔드**: [Railway 배포 URL](https://instaup-backend-production.up.railway.app)
-- **프론트엔드**: [Netlify 배포 URL](https://same-4001w3tt33q-latest.netlify.app)
+- **백엔드**: Railway ([배포 가이드](./instaup-backend/RAILWAY_DEPLOY_GUIDE.md))
+- **프론트엔드**: Netlify ([배포 가이드](./instaup-clean/DEPLOYMENT_GUIDE.md))
 
-### 헬스체크
-- **API 상태**: `GET /health`
-- **데이터베이스**: PostgreSQL 연결 확인
+### 개발 환경
+- **백엔드**: `localhost:3000`
+- **프론트엔드**: `localhost:5173`
 
-## 📖 문서
+## 📝 프로젝트 진행 상황
 
-- [백엔드 README](./backend/README.md)
-- [프론트엔드 Classic README](./frontend/classic/README.md)
-- [프론트엔드 Modern README](./frontend/modern/README.md)
-- [Railway 배포 가이드](./backend/RAILWAY_WEB_DEPLOY.md)
-- [프로젝트 로드맵](./docs/ROADMAP.md)
+### ✅ 완료된 작업
+- [x] 백엔드 API 서버 구축 (Express + Prisma)
+- [x] 프론트엔드 UI 완성 (React + Tailwind)
+- [x] 사용자 인증 시스템
+- [x] 데이터베이스 스키마 설계
+- [x] 배포 환경 구성
+- [x] CI/CD 파이프라인
 
-## 🗂️ 아카이브
-
-레거시 및 참고용 코드들은 `archive/` 폴더에 보관되어 있습니다:
-
-- **snsshop-clone**: 초기 참조용 SNS샵 클론 코드
-- **phases**: 단계별 개발 계획 문서들
-- **TODO.md**: 과거 개발 할일 목록
+### 🔄 진행 중
+- [ ] 고급 기능 추가
+- [ ] 성능 최적화
+- [ ] 테스트 커버리지 향상
 
 ## 🤝 기여하기
 
@@ -136,21 +118,15 @@ bun run dev
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 라이선스
+## 📄 라이선스
 
 이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.
 
-## 📞 문의
+## 👥 팀
 
-- **개발팀**: [GitHub Issues](https://github.com/neulketing/instaup/issues)
-- **비즈니스**: [이메일](mailto:contact@instaup.co.kr)
+- **개발자**: [@neulketing](https://github.com/neulketing)
+- **AI 어시스턴트**: Same AI
 
 ---
 
-<div align="center">
-
-**🚀 실제 한국인 SNS 마케팅의 새로운 기준, INSTAUP 🚀**
-
-Made with ❤️ by INSTAUP Team
-
-</div>
+**🚀 Same AI로 개발된 프로젝트**
