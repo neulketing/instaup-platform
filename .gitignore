@@ -75,3 +75,20 @@ output/
 
 # TypeScript cache
 *.tsbuildinfo
+
+# Same AI specific
+.same/logs/
+*.tsbuildinfo
+
+# Additional development files
+.vscode/settings.json
+.idea/workspace.xml
+
+# OS X
+.DS_Store*
+Icon?
+
+# Additional cache directories
+.next/
+.nuxt/
+.cache/
